@@ -1,0 +1,210 @@
+../../simh/BIN/microvax3900 install.ini 
+MicroVAX 3900 simulator V4.0-0 Current        git commit id: a615b89f
+
+Loading boot code from internal ka655x.bin
+KA655-B V5.3, VMB 2.7
+Performing normal system tests.
+40..39..38..37..36..35..34..33..32..31..
+
+?53 2 0A FF 00 0000
+
+P1=00000002  P2=00000028  P3=000026FF  P4=00D40077  P5=00000001
+P6=FFFFFFFF  P7=00000000  P8=00000000  P9=00000000 P10=20051CE0
+r0=00000004  r1=20140110  r2=97A4C14C  r3=00030850  r4=97A4C156
+r5=2004E8F9  r6=00018678  r7=000186C8  r8=0001AD9F ERF=80000000
+30..29..28..27..26..25..
+24..23..22..21..20..19..18..17..16..15..14..13..12..11..10..09..
+08..07..06..05..04..03..
+Normal operation not possible.
+
+>>>boot mua0:
+(BOOT/R5:0 MUA0
+
+
+
+  2..
+-MUA0
+  1..0..
+
+=copy
+cpu: uVAX 3000
+From: tms(0,1)
+To: ra(0,1)
+ra0: unlabeled
+Copy completed: 308 records copied
+=boot
+cpu: uVAX 3000
+
+Boot
+: ra(0,1)vmunix
+ra0: unlabeled
+326312+104440+130352 start 0x23b8
+4.3 BSD Quasijarus UNIX #3: Sat Feb 14 20:31:03 PST 2004
+    root@luthien.Harhan.ORG:/nbsd/usr/src/sys/GENERIC
+real mem  = 16744448
+SYSPTSIZE limits number of buffers to 112
+avail mem = 14920704
+using 112 buffers containing 917504 bytes of memory
+MicroVAX 3000, ucode rev 6
+tmscp0 at uba0 csr 174500 vec 774, ipl 15
+tms0 at tmscp0 slave 0
+tms1 at tmscp0 slave 1
+uda0 at uba0 csr 172150 vec 770, ipl 15
+uda0: version 3 model 3
+uda0: DMA burst size set to 4
+ra0 at uda0 slave 0: no disk label: ra82, size = 1216665 sectors
+dz0 at uba0 csr 160100 vec 300, ipl 17
+dz1 at uba0 csr 160110 vec 310, ipl 17
+dz2 at uba0 csr 160120 vec 320, ipl 17
+dz3 at uba0 csr 160130 vec 330, ipl 17
+root device? ra0*
+WARNING: clock lost 146 days -- CHECK AND RESET THE DATE!
+erase ^?, kill ^U, intr ^C
+# disklabel -rw ra0 ra82 "Quasijarus" /usr/mdec/rdboot /usr/mdec/bootra
+# disk=ra0 type=ra82 tape=tms xtr
+Build root file system
+Warning: 361 sector(s) in last cylinder unallocated
+/dev/rra0a:     15884 sectors in 19 cylinders of 15 tracks, 57 sectors
+        8.1MB in 2 cyl groups (16 c/g, 7.00MB/g, 3200 i/g)
+super-block backups (for fsck -b #) at:
+ 32, 13776,
+Check the file system
+** /dev/rra0a
+** Last Mounted on 
+** Phase 1 - Check Blocks and Sizes
+** Phase 2 - Check Pathnames
+** Phase 3 - Check Connectivity
+** Phase 4 - Check Reference Counts
+** Phase 5 - Check Cyl groups
+1 files, 1 used, 7092 free (20 frags, 884 blocks, 0.3% fragmentation)
+Rewind tape
+Restore the dump image of the root
+** /dev/rra0a
+** Last Mounted on /a
+** Phase 1 - Check Blocks and Sizes
+** Phase 2 - Check Pathnames
+** Phase 3 - Check Connectivity
+** Phase 4 - Check Reference Counts
+** Phase 5 - Check Cyl groups
+426 files, 5195 used, 1898 free (18 frags, 235 blocks, 0.3% fragmentation)
+Root filesystem extracted
+
+If this is an 8650 or 8600, update the console rl02
+If this is a 780 or 785, update the floppy
+If this is a 730, update the cassette
+# sync
+# sync
+# sync
+# 
+Simulation stopped, PC: 800029B1 (BRB 800029A9)
+sim> q
+Goodbye
+
+../../simh/BIN/microvax3900 boot.ini
+MicroVAX 3900 simulator V4.0-0 Current        git commit id: a615b89f
+
+Loading boot code from internal ka655x.bin
+KA655-B V5.3, VMB 2.7
+Performing normal system tests.
+40..39..38..37..36..35..34..33..32..31..
+
+?53 2 0A FF 00 0000
+
+P1=00000002  P2=00000028  P3=00002704  P4=00D40077  P5=00000001
+P6=FFFFFFFF  P7=00000000  P8=00000000  P9=00000000 P10=20051CE0
+r0=00000004  r1=20140110  r2=97A73F7D  r3=0003084D  r4=97A73F87
+r5=2004E8F9  r6=00018678  r7=000186C8  r8=0001ADA4 ERF=80000000
+30..29..28..27..26..25..
+24..23..22..21..20..19..18..17..16..15..14..13..12..11..10..09..
+08..07..06..05..04..03..
+Normal operation not possible.
+
+>>>boot dua0
+(BOOT/R5:0 DUA0
+
+
+
+  2..
+-DUA0
+  1..0..
+
+loading boot
+
+Boot
+: /vmunix
+326312+104440+130352 start 0x23b8
+4.3 BSD Quasijarus UNIX #3: Sat Feb 14 20:31:03 PST 2004
+    root@luthien.Harhan.ORG:/nbsd/usr/src/sys/GENERIC
+real mem  = 16744448
+SYSPTSIZE limits number of buffers to 112
+avail mem = 14920704
+using 112 buffers containing 917504 bytes of memory
+MicroVAX 3000, ucode rev 6
+tmscp0 at uba0 csr 174500 vec 774, ipl 15
+tms0 at tmscp0 slave 0
+tms1 at tmscp0 slave 1
+uda0 at uba0 csr 172150 vec 770, ipl 15
+uda0: version 3 model 3
+uda0: DMA burst size set to 4
+ra0 at uda0 slave 0: ra82, size = 1216665 sectors
+dz0 at uba0 csr 160100 vec 300, ipl 17
+dz1 at uba0 csr 160110 vec 310, ipl 17
+dz2 at uba0 csr 160120 vec 320, ipl 17
+dz3 at uba0 csr 160130 vec 330, ipl 17
+Changing root device to ra0a
+Automatic reboot in progress...
+Sun Sep 21 02:54:25 PDT 2003
+Can't open checklist file: /etc/fstab
+Automatic reboot failed... help!
+erase ^?, kill ^U, intr ^C
+# newfs ra0g ra82
+/dev/rra0g:     841320 sectors in 984 cylinders of 15 tracks, 57 sectors
+        430.8MB in 62 cyl groups (16 c/g, 7.00MB/g, 3200 i/g)
+super-block backups (for fsck -b #) at:
+ 32, 13776, 27520, 41264, 55008, 68752, 82496, 96240, 109984,
+ 123728, 137472, 151216, 164960, 178704, 192448, 206192, 218912, 232656,
+ 246400, 260144, 273888, 287632, 301376, 315120, 328864, 342608, 356352,
+ 370096, 383840, 397584, 411328, 425072, 437792, 451536, 465280, 479024,
+ 492768, 506512, 520256, 534000, 547744, 561488, 575232, 588976, 602720,
+ 616464, 630208, 643952, 656672, 670416, 684160, 697904, 711648, 725392,
+ 739136, 752880, 766624, 780368, 794112, 807856, 821600, 835344,
+# newfs ra0h ra82
+Warning: 209 sector(s) in last cylinder unallocated
+/dev/rra0h:     291346 sectors in 341 cylinders of 15 tracks, 57 sectors
+        149.2MB in 22 cyl groups (16 c/g, 7.00MB/g, 3200 i/g)
+super-block backups (for fsck -b #) at:
+ 32, 13776, 27520, 41264, 55008, 68752, 82496, 96240, 109984,
+ 123728, 137472, 151216, 164960, 178704, 192448, 206192, 218912, 232656,
+ 246400, 260144, 273888, 287632,
+# mkdir /home
+# mount /dev/ra0g /usr
+# cd /dev
+# MAKEDEV tmscp0
+# MAKEDEV dz0
+# cd /usr
+# mt rew
+# mt fsf 3
+# tar xpb 20
+# mkdir src
+# mkdir src/sys
+# cd src/sys
+# mt rew
+# mt fsf 4
+# tar xpb 20
+# cd ..
+# mt rew
+# mt fsf 5
+# tar xpb 20
+# cd /etc
+# cat > fstab
+/dev/ra0a:/:rw:1:1
+/dev/ra0h:/home:rw:1:3
+/dev/ra0g:/usr:rw:1:2
+^D
+# halt
+syncing disks... done
+
+HALT instruction, PC: 8002F4C2 (BRB 8002F4A4)
+sim> q
+Goodbye
+NVR: writing buffer to file: nvram.dat
