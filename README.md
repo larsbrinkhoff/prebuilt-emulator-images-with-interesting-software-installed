@@ -22,3 +22,9 @@ Installed software under /usr/local/src:
 Installed software under /usr/local/lib:
 
 - CLU compiler 3.429.
+
+## 4.3BSD Quasijarus on SIMH's VAXstation 3900
+
+Installed software under /usr:
+
+- X10 release 4.
