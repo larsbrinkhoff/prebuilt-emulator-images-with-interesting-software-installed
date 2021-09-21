@@ -1,0 +1,163 @@
+../../simh/BIN/vax780 install.ini 
+
+VAX 11/780 simulator V4.0-0 Current        git commit id: ca8b8d9d
+
+loading ra(0,0)boot
+Boot
+: ra(0,0)vmunix
+199488+56036+51360 start 0x11a0
+4.2 BSD UNIX #9: Wed Nov 2 16:00:29 PST 1983
+real mem  = 8384512
+avail mem = 7073792
+using 102 buffers containing 835584 bytes of memory
+mcr0 at tr1
+mcr1 at tr2
+uba0 at tr3
+hk0 at uba0 csr 177440 vec 210, ipl 15
+rk0 at hk0 slave 0
+rk1 at hk0 slave 1
+uda0 at uba0 csr 172150 vec 774, ipl 15
+ra0 at uda0 slave 0
+ra1 at uda0 slave 1
+zs0 at uba0 csr 172520 vec 224, ipl 15
+ts0 at zs0 slave 0
+dz0 at uba0 csr 160100 vec 300, ipl 15
+dz1 at uba0 csr 160110 vec 310, ipl 15
+dz2 at uba0 csr 160120 vec 320, ipl 15
+dz3 at uba0 csr 160130 vec 330, ipl 15
+root on ra0
+WARNING: clock lost 43 days -- CHECK AND RESET THE DATE!
+WARNING: should run interleaved swap with >= 2Mb
+erase ^?, kill ^U, intr ^C
+# cd /dev
+# ./MAKEDEV ra1
+# cd /
+# disk=ra1 type=ra81 tape=ts xtr
+Build root file system
+Warning: 538 sector(s) in last cylinder unallocated
+/dev/rra1a:     15884 sectors in 23 cylinders of 14 tracks, 51 sectors
+        8.1Mb in 2 cyl groups (16 c/g, 5.85Mb/g, 1856 i/g)
+super-block backups (for fsck -b#) at:
+ 32, 11520,
+Check the file system
+** /dev/rra1a
+** Last Mounted on 
+** Phase 1 - Check Blocks and Sizes
+** Phase 2 - Check Pathnames
+** Phase 3 - Check Connectivity
+** Phase 4 - Check Reference Counts
+** Phase 5 - Check Cyl groups
+2 files, 9 used, 7420 free (20 frags, 925 blocks)
+Rewind tape
+Restore the dump image of the root
+Warning: ./lost+found: File exists
+** /dev/rra1a
+** Last Mounted on /a
+** Phase 1 - Check Blocks and Sizes
+** Phase 2 - Check Pathnames
+** Phase 3 - Check Connectivity
+** Phase 4 - Check Reference Counts
+** Phase 5 - Check Cyl groups
+313 files, 3568 used, 3861 free (21 frags, 480 blocks)
+Root filesystem extracted
+
+If this is a 780, update floppy
+If this is a 730, update the cassette
+# sync
+# sync
+# sync
+# 
+Simulation stopped, PC: 80001629 (BNEQ 80001630)
+sim> q
+
+../../simh/BIN/vax780 boot.ini
+
+VAX 11/780 simulator V4.0-0 Current        git commit id: ca8b8d9d
+
+loading ra(0,0)boot
+Boot
+: ra(0,0)vmunix
+199488+56036+51360 start 0x11a0
+4.2 BSD UNIX #9: Wed Nov 2 16:00:29 PST 1983
+real mem  = 8384512
+avail mem = 7073792
+using 102 buffers containing 835584 bytes of memory
+mcr0 at tr1
+mcr1 at tr2
+uba0 at tr3
+hk0 at uba0 csr 177440 vec 210, ipl 15
+rk0 at hk0 slave 0
+rk1 at hk0 slave 1
+uda0 at uba0 csr 172150 vec 774, ipl 15
+ra0 at uda0 slave 0
+ra1 at uda0 slave 1
+zs0 at uba0 csr 172520 vec 224, ipl 15
+ts0 at zs0 slave 0
+dz0 at uba0 csr 160100 vec 300, ipl 15
+dz1 at uba0 csr 160110 vec 310, ipl 15
+dz2 at uba0 csr 160120 vec 320, ipl 15
+dz3 at uba0 csr 160130 vec 330, ipl 15
+root on ra0
+WARNING: should run interleaved swap with >= 2Mb
+Automatic reboot in progress...
+Wed Sep 21 00:14:44 PDT 1983
+Can't open checklist file: /etc/fstab
+Automatic reboot failed... help!
+erase ^?, kill ^U, intr ^C
+# disk=ra
+# name=ra0h;type=ra81
+# cd /dev
+# ./MAKEDEV ts0
+# sync
+# cd /
+# newfs $name $type
+Warning: 28 sector(s) in last cylinder unallocated
+/dev/rra0h:     759668 sectors in 1064 cylinders of 14 tracks, 51 sectors
+        389.0Mb in 67 cyl groups (16 c/g, 5.85Mb/g, 2048 i/g)
+super-block backups (for fsck -b#) at:
+ 32, 11512, 22992, 34472, 45952, 57432, 68912, 80392, 91872, 103352,
+ 114832, 126312, 137792, 149272, 160752, 172232, 182816, 194296, 205776, 217256,
+ 228736, 240216, 251696, 263176, 274656, 286136, 297616, 309096, 320576, 332056,
+ 343536, 355016, 365600, 377080, 388560, 400040, 411520, 423000, 434480, 445960,
+ 457440, 468920, 480400, 491880, 503360, 514840, 526320, 537800, 548384, 559864,
+ 571344, 582824, 594304, 605784, 617264, 628744, 640224, 651704, 663184, 674664,
+ 686144, 697624, 709104, 720584, 731168, 742648, 754128,
+# mount /dev/$name /usr
+# cd /usr
+# mkdir sys
+# cd sys
+# mt rew
+# mt fsf 3
+# tar xpbf 20 /dev/rmt12
+# cd ..
+# tar mt fsf
+# tar xpbf 20 /dev/rmt12
+# cd /
+# chmod 755 / /usr /usr/sys
+# rm -rf sys
+# ln -s /usr/sys sys
+# umount /dev/$name
+# fsck /dev/$name
+** /dev/ra0h
+** Last Mounted on /usr
+** Phase 1 - Check Blocks and Sizes
+** Phase 2 - Check Pathnames
+** Phase 3 - Check Connectivity
+** Phase 4 - Check Reference Counts
+** Phase 5 - Check Cyl groups
+3735 files, 25550 used, 336310 free (166 frags, 84036 blocks)
+# cd /etc
+# cp fstab.ra81 fstab
+# newfs ra0g ra81
+Warning: 30 sector(s) in last cylinder unallocated
+/dev/rra0g:     82080 sectors in 115 cylinders of 14 tracks, 51 sectors
+        42.0Mb in 8 cyl groups (16 c/g, 5.85Mb/g, 2048 i/g)
+super-block backups (for fsck -b#) at:
+ 32, 11512, 22992, 34472, 45952, 57432, 68912, 80392,
+# sync
+# reboot
+syncing disks... done
+
+Reboot request failed, PC: 80021716 (ADDL2 #8,SP)
+sim> q
+Goodbye
