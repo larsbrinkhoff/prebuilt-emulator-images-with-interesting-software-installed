@@ -10,3 +10,9 @@ natural habitat:
 - X10
 - Chaosnet for Unix
 
+## 4.2BSD on SIMH's VAX780
+
+Installed software under /usr/local/src:
+
+- Gosling Emacs 264.
+- GNU Emacs 16.56.
