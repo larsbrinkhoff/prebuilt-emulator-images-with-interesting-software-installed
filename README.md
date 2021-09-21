@@ -16,3 +16,9 @@ Installed software under /usr/local/src:
 
 - Gosling Emacs 264.
 - GNU Emacs 16.56.
+
+## 4.3BSD on SIMH's VAX780
+
+Installed software under /usr/local/lib:
+
+- CLU compiler 3.429.
