@@ -19,6 +19,10 @@ Installed software under /usr/local/src:
 
 ## 4.3BSD on SIMH's VAX780
 
+Installed software under /usr:
+
+- X10R4 with VAXstation 100 server.
+
 Installed software under /usr/local/lib:
 
 - CLU compiler 3.429.
