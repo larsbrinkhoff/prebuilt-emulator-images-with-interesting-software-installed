@@ -22,6 +22,7 @@ Installed software under /usr/local/src:
 Installed software under /usr:
 
 - X10R4 with VAXstation 100 server.
+- Kernel with vs device driver.
 
 Installed software under /usr/local/lib:
 
